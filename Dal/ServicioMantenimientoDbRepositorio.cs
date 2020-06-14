@@ -34,31 +34,31 @@ namespace Dal
             }
         }
 
-        public IList<ServicioMantenimiento> Consultar()
-        {
-            SqlDataReader dataReader;
-            List<ServicioMantenimiento> personas = new List<ServicioMantenimiento>();
-            using (var command = _connection.CreateCommand())
-            {
-                command.CommandText = "select Sede,Identificacion, Nombre,year(fecha)as Vigencia, month(fecha) as Mes, sum(valor) as Liquidacion from baseliquidacion group by Identificacion, Nombre, year(fecha), month(fecha),SEDE";
-                dataReader = command.ExecuteReader();
-                if (dataReader.HasRows)
-                {
-                    while (dataReader.Read())
-                    {
-                        if (!dataReader.HasRows) return null;
-                        ServicioMantenimiento servicio = new ServicioMantenimiento();
-                        servicio.Contratista.IdSurcusal = dataReader.GetString(0);
+        //public IList<ServicioMantenimiento> Consultar()
+        //{
+        //    SqlDataReader dataReader;
+        //    List<ServicioMantenimiento> personas = new List<ServicioMantenimiento>();
+        //    using (var command = _connection.CreateCommand())
+        //    {
+        //        command.CommandText = "select Sede,Identificacion, Nombre,year(fecha)as Vigencia, month(fecha) as Mes, sum(valor) as Liquidacion from baseliquidacion group by Identificacion, Nombre, year(fecha), month(fecha),SEDE";
+        //        dataReader = command.ExecuteReader();
+        //        if (dataReader.HasRows)
+        //        {
+        //            while (dataReader.Read())
+        //            {
+        //                if (!dataReader.HasRows) return null;
+        //                ServicioMantenimiento servicio = new ServicioMantenimiento();
+        //                servicio.Contratista.IdSurcusal = dataReader.GetString(0);
                       
 
                   
-                    }
-                }
-            }
-            return personas;
+        //            }
+        //        }
+        //    }
+        //    return personas;
 
 
-        }
+        //}
 
     }
 }

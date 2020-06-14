@@ -28,15 +28,15 @@ namespace Dal
 
         }
 
-        public IList<ServicioMantenimiento> Consultar()
+        public IList<ServicioMantenimiento> Consultar(string ruta)
         {
             ServicioMantenimientos.Clear();
 
             string linea = string.Empty;
-            FileStream fileStream = new FileStream(ruta, FileMode.OpenOrCreate);
+            FileStream fileStream = new FileStream(path: ruta, FileMode.Open);
             StreamReader lector = new StreamReader(fileStream);
 
-            while ((linea = lector.ReadLine()) != null)
+                while ((linea = lector.ReadLine()) != null)
             {
                 
                 String[] datos = linea.Split(';');
