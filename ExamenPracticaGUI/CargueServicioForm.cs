@@ -74,6 +74,11 @@ namespace ExamenPracticaGUI
                         lector.Close();
 
                     }
+
+                    foreach (var item in servicioMantenimientos)
+                    {
+                        ServicioDb.Guardar(item);
+                    }
                     
                 }
 
@@ -88,7 +93,7 @@ namespace ExamenPracticaGUI
         {
             foreach (var item in servicioMantenimientos)
             {
-                
+              
             }
 
         }
