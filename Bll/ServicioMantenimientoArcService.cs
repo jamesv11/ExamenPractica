@@ -32,27 +32,27 @@ namespace Bll
 
 
         }
-        public RespuestaConsulta Consultar(string ruta)
-        {
+        //public RespuestaConsulta Consultar(string ruta)
+        //{
             
-            RespuestaConsulta respuestaConsulta = new RespuestaConsulta();
-            try
-            {
+        //    RespuestaConsulta respuestaConsulta = new RespuestaConsulta();
+        //    try
+        //    {
 
-                respuestaConsulta.Servicios = arcRepositorio.Consultar(ruta);
-                foreach (var item in respuestaConsulta.Servicios)
-                {
-                    Console.WriteLine(item.ToString());
-                }
-                respuestaConsulta.Mensaje = "Consulta realizada con exito";
-                return respuestaConsulta;
-            }
-            catch (Exception)
-            {
-                respuestaConsulta.Mensaje = "No hay mensaje que consultar";
-                return respuestaConsulta;
-            }
-        }
+        //        respuestaConsulta.Servicios = arcRepositorio.Consultar(ruta);
+        //        foreach (var item in respuestaConsulta.Servicios)
+        //        {
+        //            Console.WriteLine(item.ToString());
+        //        }
+        //        respuestaConsulta.Mensaje = "Consulta realizada con exito";
+        //        return respuestaConsulta;
+        //    }
+        //    catch (Exception)
+        //    {
+        //        respuestaConsulta.Mensaje = "No hay mensaje que consultar";
+        //        return respuestaConsulta;
+        //    }
+        //}
     }
     public class RespuestaConsulta
     {

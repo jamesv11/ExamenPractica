@@ -8,7 +8,7 @@ using Entity;
 
 namespace Dal
 {
-    class ServicioMantenimientoDbRepositorio
+    public class ServicioMantenimientoDbRepositorio
     {
         private readonly SqlConnection _connection;
         IList<ServicioMantenimiento> servicioMantenimientos = new List<ServicioMantenimiento>();       
@@ -24,9 +24,9 @@ namespace Dal
                 command.CommandText = "INSERTAR_LIQUIDACION";
                 command.CommandType = System.Data.CommandType.StoredProcedure;
 
-                command.Parameters.AddWithValue("@SEDE", servicio.Contratista.IdSurcusal);
-                command.Parameters.AddWithValue("@IDENTIFACION", servicio.Contratista.Identificacion);
-                command.Parameters.AddWithValue("@NOMBRE", servicio.Contratista.NombreContratista);
+                command.Parameters.AddWithValue("@SEDE", servicio.ContratistaServicio.IdSurcusal);
+                command.Parameters.AddWithValue("@IDENTIFACION", servicio.ContratistaServicio.Identificacion);
+                command.Parameters.AddWithValue("@NOMBRE", servicio.ContratistaServicio.NombreContratista);
                 command.Parameters.AddWithValue("@FECHA", servicio.FechaServicio);
                 command.Parameters.AddWithValue("@VALOR", servicio.Valor);
                 var filas = command.ExecuteNonQuery();

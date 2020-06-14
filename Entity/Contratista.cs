@@ -12,5 +12,10 @@ namespace Entity
         public string Identificacion { get; set; }
         public string NombreContratista { get; set; }
 
+        public Contratista()
+        {
+
+        }
+
     }
 }

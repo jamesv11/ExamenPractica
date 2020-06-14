@@ -35,6 +35,7 @@
             this.CargarBtn = new System.Windows.Forms.Button();
             this.SedeCmbx = new System.Windows.Forms.ComboBox();
             this.MesCmbx = new System.Windows.Forms.ComboBox();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.SuspendLayout();
             // 
             // AñoTxt
@@ -114,6 +115,11 @@
             this.MesCmbx.Size = new System.Drawing.Size(121, 21);
             this.MesCmbx.TabIndex = 8;
             // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            this.openFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog1_FileOk);
+            // 
             // CargueServicioForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -141,6 +147,7 @@
         private System.Windows.Forms.Button CargarBtn;
         private System.Windows.Forms.ComboBox SedeCmbx;
         private System.Windows.Forms.ComboBox MesCmbx;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }
 
